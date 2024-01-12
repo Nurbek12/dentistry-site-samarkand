@@ -34,7 +34,7 @@
                 <div class="md:flex items-center gap-10 hidden">
                     <router-link v-for="link,i in navigation_links" :key="i"
                         :to="link.url" class="hover:underline" :class="{'text-purple-600':route.path===link.url}">{{ link.title }}</router-link>
-                    <button class="border-2 lg:block hidden border-purple-600 text-purple-600 hover:bg-purple-500 hover:text-white px-2 py-1">Отправить отзыв</button>
+                    <app-lang-btn />
                 </div>
             </div>
         </div>
@@ -43,6 +43,7 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
+import AppLangBtn from './app-lang-btn.vue'
 import { ref, onMounted, defineProps, toRefs  } from 'vue'
 import { navigation_links, social_links } from '../constants'
 import { ByMenu, CgClose, AkClock, BxMap, CaPhone } from '@kalimahapps/vue-icons'
